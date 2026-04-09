@@ -1,0 +1,56 @@
+<div class="nutrition-grid">
+  <div class="nutrition-card calories">
+    <span class="label">Calories</span>
+    <div class="value-container">
+      <tm-ng-odometer 
+        [number]="calories" 
+        [config]="{ animation: 'count', theme: 'minimal', duration: 500 }">
+      </tm-ng-odometer>
+      <small>kcal</small>
+    </div>
+  </div>
+
+  <div class="nutrition-card">
+    <span class="label">Protein</span>
+    <div class="value-container">
+      <tm-ng-odometer 
+        [number]="protein" 
+        [config]="{ animation: 'count', theme: 'minimal', duration: 500 }">
+      </tm-ng-odometer>
+      <small>g</small>
+    </div>
+  </div>
+
+  <div class="nutrition-card">
+    <span class="label">Carbohydrate</span>
+    <div class="value-container">
+      <tm-ng-odometer 
+        [number]="carbohydrate" 
+        [config]="{ animation: 'count', theme: 'minimal', duration: 500 }">
+      </tm-ng-odometer>
+      <small>g</small>
+    </div>
+  </div>
+
+  <div class="nutrition-card">
+    <span class="label">Fat</span>
+    <div class="value-container">
+      <tm-ng-odometer 
+        [number]="fat" 
+        [config]="{ animation: 'count', theme: 'minimal', duration: 500 }">
+      </tm-ng-odometer>
+      <small>g</small>
+    </div>
+  </div>
+
+  <div class="nutrition-card">
+    <span class="label">Fiber</span>
+    <div class="value-container">
+      <tm-ng-odometer 
+        [number]="fiber" 
+        [config]="{ animation: 'count', theme: 'minimal', duration: 500 }">
+      </tm-ng-odometer>
+      <small>g</small>
+    </div>
+  </div>
+</div>

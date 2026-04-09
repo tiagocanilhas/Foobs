@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.meal-form {
+    flex: 1;
+}
+
+mat-form-field {
+    margin-right: 5px;
+}

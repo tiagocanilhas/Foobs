@@ -1,0 +1,69 @@
+:host{ 
+  background-color: #d7e4de;
+}
+
+.meal-detail-container {
+  padding: 16px;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.meal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.meal-image-wrapper {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.meal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ingredients-section h3 {
+  font-size: 1.1rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.qty {
+  font-weight: 600;
+  color: #555;
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.food-name {
+  color: #333;
+}
+
+.empty-state {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+}

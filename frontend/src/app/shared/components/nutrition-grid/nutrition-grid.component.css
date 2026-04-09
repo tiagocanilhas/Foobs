@@ -1,0 +1,63 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.nutrition-card {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.nutrition-card.calories {
+  grid-column: span 2;
+  background: #f0fdf4;
+  border-color: #dcfce7;
+}
+
+.label {
+  font-size: 0.7rem;
+  color: #718096;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  margin-bottom: 2px;
+}
+
+.value-container {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  overflow: hidden;
+  height: 1.5rem;
+}
+
+.value {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.value small {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #a0aec0;
+}
+
+.calories .value {
+  color: #166534;
+  font-size: 1.2rem;
+}
+

@@ -1,0 +1,23 @@
+<mat-toolbar>
+  <button matIconButton class="menu-icon" (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Foobs</span>
+</mat-toolbar>
+
+<mat-drawer-container>
+  
+  <mat-drawer mode="side" [opened]="sidenavOpened">  
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" (click)="toggleSidenav()">Home</a>
+      <a mat-list-item routerLink="/add-food" (click)="toggleSidenav()">Add a food</a>
+      <a mat-list-item routerLink="/add-meal" (click)="toggleSidenav()">Add a meal</a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet />
+  </mat-drawer-content>
+
+</mat-drawer-container>
+

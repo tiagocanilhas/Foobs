@@ -1,0 +1,12 @@
+<app-filter-panel /> 
+
+<div class="meal-list">
+    @for (meal of meals$ | async; track meal.id) {
+        <app-meal-card [meal]="meal" (selected)="mealSelected($event)" />
+    } @empty {
+        <p>No meals found.</p>
+    }
+</div>
+
+<app-meal-panel [meal]="meal" (close)="closeMealPanel()" />
+

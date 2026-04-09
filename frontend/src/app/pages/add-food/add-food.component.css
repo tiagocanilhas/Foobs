@@ -1,0 +1,16 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 20px;
+}
+
+.units {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+mat-form-field {
+    margin-right: 5px;
+}
