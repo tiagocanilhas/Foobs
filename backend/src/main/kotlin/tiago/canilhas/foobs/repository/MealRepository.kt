@@ -7,6 +7,8 @@ import org.jdbi.v3.core.kotlin.mapTo
 import tiago.canilhas.foobs.domain.Food
 import tiago.canilhas.foobs.domain.MealFood
 import tiago.canilhas.foobs.domain.MealFoodInfo
+import tiago.canilhas.foobs.domain.SortDirection
+import tiago.canilhas.foobs.domain.SortValue
 import kotlin.collections.MutableList
 
 class MealRepository(
@@ -52,7 +54,13 @@ class MealRepository(
         TODO("Not yet implemented")
     }
 
-    override fun getMultiple(): List<Meal> {
+    override fun getMultiple(
+        name: String?,
+        minCalories: Int?,
+        maxCalories: Int?,
+        sortValue: SortValue?,
+        sortDirection: SortDirection?,
+    ): List<Meal> {
         val query = StringBuilder("""
             SELECT md.*, f.name as food_name, mf.quantity as quantity, fu.name as unit_name FROM foobs.MealDetails md
             JOIN foobs.MealFood mf ON mf.meal_id = md.id 
@@ -61,9 +69,18 @@ class MealRepository(
             WHERE 1=1
         """.trimIndent())
 
-        query.append(" ORDER BY md.id ASC")
+        name?.let { query.append(" AND md.name ILIKE :name") }
+        minCalories?.let { query.append(" AND md.calories >= :minCalories") }
+        maxCalories?.let { query.append(" AND md.calories <= :maxCalories") }
+
+        query.append(" ORDER BY md.${sortValue ?: SortValue.NAME} ${sortDirection ?: SortDirection.ASC}")
 
         return handle.createQuery(query.toString())
+            .apply {
+                name?.let { bind("name", "%$it%") }
+                minCalories?.let { bind("minCalories", it) }
+                maxCalories?.let { bind("maxCalories", it) }
+            }
             .reduceRows(LinkedHashMap<Int, Meal>()) { map, rowView ->
 
                 val mealId = rowView.getColumn("id", Int::class.javaObjectType)

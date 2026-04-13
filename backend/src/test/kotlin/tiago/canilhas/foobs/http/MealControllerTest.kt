@@ -17,6 +17,7 @@ import tiago.canilhas.foobs.http.model.input.CreateMealFood
 import tiago.canilhas.foobs.service.MealService
 import tools.jackson.databind.ObjectMapper
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import tiago.canilhas.foobs.domain.failure
 
 @WebMvcTest(MealController::class)
@@ -81,7 +82,19 @@ class MealControllerTest {
     }
 
     @Test
-    fun getMultiple() {
+    fun getMultiple_returnsList_whenDataIsValid() {
+        val meals = listOf(
+            Meal(id = 1, name = "Meal 1"),
+            Meal(id = 2, name = "Meal 2")
+        )
+        every { mealService.getMultiple(any(), any(), any(), any(), any()) } returns success(meals)
+
+        mockMvc.perform(
+            get(Routes.Meal.GET_MULTIPLE)
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(meals))
+        )
+            .andExpect(status().isOk)
     }
 
     @Test

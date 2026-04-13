@@ -1,12 +1,76 @@
-<app-filter-panel /> 
+<div class="page-layout" [formGroup]="filters">
+    <aside class="filters">
+        <h2 class="filters-title">Filters</h2>
 
-<div class="meal-list">
-    @for (meal of meals$ | async; track meal.id) {
-        <app-meal-card [meal]="meal" (selected)="mealSelected($event)" />
-    } @empty {
-        <p>No meals found.</p>
-    }
+        <section class="filter-group">
+            <h3 class="group-title">Calories Range</h3>
+            
+            <div class="calories-inputs">
+                <mat-form-field appearance="outline" class="narrow-field">
+                    <mat-label>Min</mat-label>
+                    <input matInput type="number" formControlName="minCalories" step="10" min="1">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="narrow-field">
+                    <mat-label>Max</mat-label>
+                    <input matInput type="number" formControlName="maxCalories" step="10">
+                </mat-form-field>
+            </div>
+        </section>
+    </aside>
+
+    <main class="container">
+        <section class="search-section">
+            <mat-form-field>
+                <mat-label>Search for meals...</mat-label>
+                    <input matInput type="text" formControlName="name">
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Sort by</mat-label>
+                <mat-select formControlName="sortValue">
+                    @for (option of sortOptions; track option) {
+                        <mat-option [value]="option">{{ option }}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <button mat-icon-button type="button" (click)="toggleDirection()">
+                <mat-icon>
+                    {{ filters.controls.sortDirection.value === 'ASC' ? 'arrow_upward' : 'arrow_downward' }}
+                </mat-icon>
+            </button>
+
+        </section>
+
+        <div class="meals">
+            @if (meals$ | async; as meals) {
+                @for (meal of meals; track meal.id) {
+                    <app-meal-card 
+                        [meal]="meal" 
+                        (selected)="mealSelected($event)" 
+                        class="meal-item"
+                    />
+                } @empty {
+                    <div class="no-results">
+                        <p>No meals found matching your filters.</p>
+                    </div>
+                }
+            } @else {
+                @for (i of [].constructor(16); track $index) {
+                    <div class="skeleton-card">
+                        <div class="skeleton-img"></div>
+                        <div class="skeleton-text"></div>
+                    </div>
+                }
+            }
+        </div>
+    </main>
 </div>
 
-<app-meal-panel [meal]="meal" (close)="closeMealPanel()" />
+<app-meal-panel 
+    [meal]="meal" 
+    (close)="closeMealPanel()" 
+/>
 

@@ -12,12 +12,14 @@ import org.junit.jupiter.api.Test
 import tiago.canilhas.foobs.domain.Failure
 import tiago.canilhas.foobs.domain.Meal
 import tiago.canilhas.foobs.domain.MealDomain
+import tiago.canilhas.foobs.domain.MealFood
 import tiago.canilhas.foobs.domain.MealFoodInfo
 import tiago.canilhas.foobs.domain.Success
 import tiago.canilhas.foobs.repository.MealRepository
 import tiago.canilhas.foobs.repository.TransactionManager
 import tiago.canilhas.foobs.repository.interfaces.ITransaction
 import tiago.canilhas.foobs.service.MealService.CreateError
+import tiago.canilhas.foobs.service.MealService.GetMultipleError
 
 
 class MealServiceTest {
@@ -88,7 +90,28 @@ class MealServiceTest {
     }
 
     @Test
-    fun getMultiple() {
+    fun getMultiple_returnsSuccess_whenDataIsValid() {
+        val expectedMeal = Meal(id = 1, name = "name")
+
+        every { mealRepository.getMultiple() } returns listOf(expectedMeal)
+
+        val result = service.getMultiple()
+
+        assertTrue(result is Success)
+        assertEquals(listOf(expectedMeal), (result as Success).value)
+
+        verify(exactly = 1) { mealRepository.getMultiple() }
+    }
+
+    @Test
+    fun getMultiple_returnsInvalidMinCalories(){
+        val minCalories = 0
+
+        val result = service.getMultiple(minCalories = minCalories)
+
+        assertTrue(result is Failure)
+        assertEquals(GetMultipleError.InvalidMinCalories, (result as Failure).value)
+        verify { transactionManager wasNot Called }
     }
 
     @Test

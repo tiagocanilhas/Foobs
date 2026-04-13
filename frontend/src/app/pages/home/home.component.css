@@ -5,9 +5,91 @@
     gap: 10px;
 }
 
-.meal-list {
+.page-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 15px;
+
+    border-radius: 8px;
+
+    background-color: #d7e4de;
+    border: 1px solid black;
+}
+
+mat-form-field {
+    padding-right: 5px;
+}
+
+
+.calories-inputs {
+    display: flex;
+    gap: 12px;
+}
+
+.full-width-slider {
+    width: 95%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    gap: 5x;
+}
+
+.meals {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    flex: 1;
+}
+
+/**
+*   Skeleton loading styles
+*/
+
+.skeleton-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: white;
+    overflow: hidden;
+    gap: 10px;
+}
+
+.skeleton-img {
+  width: 100%;
+  aspect-ratio: 4 / 3; 
+  object-fit: cover;
+  display: block;
+}
+
+.skeleton-text {
+    width: 70%;
+    height: 16px;
+    background: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.skeleton-img, .skeleton-text {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }

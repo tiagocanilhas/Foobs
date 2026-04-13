@@ -1,12 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
 import { Meal } from '@models/meal';
-
-interface MealResponse {
-  value: Meal[];
-}
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +24,24 @@ export class MealService {
     });
   }
 
-  getMeals(): Observable<Meal[]> {
-    return this.http.get<MealResponse>('/api/meal')
-      .pipe(map(res => res.value));
+  getMeals(
+    name: string,
+    minCalories: number,
+    maxCalories: number,
+    sortValue: string,
+    sortDirection: string
+  ): Observable<Meal[]> {
+
+    console.log({ name, minCalories, maxCalories, sortValue, sortDirection });
+
+    const params = new HttpParams()
+      .set('name', name)
+      .set('minCalories', minCalories)
+      .set('maxCalories', maxCalories)
+      .set('sortValue', sortValue)
+      .set('sortDirection', sortDirection);
+
+    return this.http.get<{ meals: Meal[] }>('/api/meal', { params })
+      .pipe(map(res => res.meals));
   }
 }

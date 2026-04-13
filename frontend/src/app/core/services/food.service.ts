@@ -36,11 +36,10 @@ export class FoodService {
   }
 
   getFoods(name: string): Observable<Food[]> {
-    let params = new HttpParams()
-
-    if (name) params = params.set('name', name);
+    const params = new HttpParams()
+      .set('name', name);
     
-    return this.http.get<{ food: Food[] }>(`/api/food`, { params })
-      .pipe(map(res => res.food));
+    return this.http.get<{ foods: Food[] }>(`/api/food`, { params })
+      .pipe(map(res => res.foods));
   }
 }

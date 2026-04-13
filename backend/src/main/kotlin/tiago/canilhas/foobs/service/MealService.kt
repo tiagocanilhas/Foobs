@@ -5,6 +5,8 @@ import tiago.canilhas.foobs.domain.Either
 import tiago.canilhas.foobs.domain.Meal
 import tiago.canilhas.foobs.domain.MealDomain
 import tiago.canilhas.foobs.domain.MealFoodInfo
+import tiago.canilhas.foobs.domain.SortDirection
+import tiago.canilhas.foobs.domain.SortValue
 import tiago.canilhas.foobs.domain.failure
 import tiago.canilhas.foobs.domain.success
 import tiago.canilhas.foobs.repository.TransactionManager
@@ -60,15 +62,27 @@ class MealService(
 
 
     sealed class GetMultipleError {
+        object InvalidMinCalories: GetMultipleError()
 
     }
     typealias GetMultipleResult = Either<GetMultipleError, List<Meal>>
 
-    fun getMultiple(): GetMultipleResult {
+    fun getMultiple(
+        name: String? = null,
+        minCalories: Int? = null,
+        maxCalories: Int? = null,
+        sortValue: SortValue? = null,
+        sortDirection: SortDirection? = null,
+    ): GetMultipleResult {
+
+        minCalories?.let {
+            if (!mealDomain.isMinCaloriesValid(minCalories)) return failure(GetMultipleError.InvalidMinCalories)
+        }
+
         return transactionManager.run {
             val mealRepository = it.mealRepository
 
-            val meals = mealRepository.getMultiple()
+            val meals = mealRepository.getMultiple(name, minCalories, maxCalories, sortValue, sortDirection)
 
             success(meals)
         }

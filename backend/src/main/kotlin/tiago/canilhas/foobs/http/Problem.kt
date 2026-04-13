@@ -31,10 +31,11 @@ class Problem(
 
 
         /**
-         * Meal related problemsk
+         * Meal related problems
          */
 
         val mealInvalidName = Problem("Meal has an invalid name")
+        val mealInvalidMinCalories = Problem("Invalid minCalories")
     }
 
 }

@@ -201,10 +201,10 @@ class FoodControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
         )
             .andExpect(status().isOk)
-            .andExpect(jsonPath("$.food.length()").value(3))
-            .andExpect(jsonPath("$.food[0].name").value("Apple"))
-            .andExpect(jsonPath("$.food[1].name").value("Green Apple"))
-            .andExpect(jsonPath("$.food[2].name").value("Banana"))
+            .andExpect(jsonPath("$.foods.length()").value(3))
+            .andExpect(jsonPath("$.foods[0].name").value("Apple"))
+            .andExpect(jsonPath("$.foods[1].name").value("Green Apple"))
+            .andExpect(jsonPath("$.foods[2].name").value("Banana"))
     }
 
     @Test
@@ -223,9 +223,9 @@ class FoodControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
         )
             .andExpect(status().isOk)
-            .andExpect(jsonPath("$.food.length()").value(2))
-            .andExpect(jsonPath("$.food[0].name").value("Apple"))
-            .andExpect(jsonPath("$.food[1].name").value("Green Apple"))
+            .andExpect(jsonPath("$.foods.length()").value(2))
+            .andExpect(jsonPath("$.foods[0].name").value("Apple"))
+            .andExpect(jsonPath("$.foods[1].name").value("Green Apple"))
     }
 
 
