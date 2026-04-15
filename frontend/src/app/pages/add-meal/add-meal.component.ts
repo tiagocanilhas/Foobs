@@ -11,6 +11,8 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { debounceTime, distinctUntilChanged, Observable, of, switchMap } from 'rxjs';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { NutritionGridComponent } from '@components/nutrition-grid/nutrition-grid.component';
 
 import { FoodService } from '@services/food.service';
@@ -39,6 +41,9 @@ import { AddMealForm, MealFoodForm } from './add-meal.forms';
 
     // Pipes
     AsyncPipe,
+
+    // Translate
+    TranslateModule
   ],
   templateUrl: './add-meal.component.html',
   styleUrl: './add-meal.component.css'

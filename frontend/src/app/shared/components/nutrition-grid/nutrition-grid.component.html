@@ -1,6 +1,6 @@
 <div class="nutrition-grid">
   <div class="nutrition-card calories">
-    <span class="label">Calories</span>
+    <span class="label">{{ 'NUTRITION_GRID.CALORIES' | translate }}</span>
     <div class="value-container">
       <tm-ng-odometer 
         [number]="calories" 
@@ -11,7 +11,7 @@
   </div>
 
   <div class="nutrition-card">
-    <span class="label">Protein</span>
+    <span class="label">{{ 'NUTRITION_GRID.PROTEIN' | translate }}</span>
     <div class="value-container">
       <tm-ng-odometer 
         [number]="protein" 
@@ -22,7 +22,7 @@
   </div>
 
   <div class="nutrition-card">
-    <span class="label">Carbohydrate</span>
+    <span class="label">{{ 'NUTRITION_GRID.CARBOHYDRATE' | translate }}</span>
     <div class="value-container">
       <tm-ng-odometer 
         [number]="carbohydrate" 
@@ -33,7 +33,7 @@
   </div>
 
   <div class="nutrition-card">
-    <span class="label">Fat</span>
+    <span class="label">{{ 'NUTRITION_GRID.FAT' | translate }}</span>
     <div class="value-container">
       <tm-ng-odometer 
         [number]="fat" 
@@ -44,7 +44,7 @@
   </div>
 
   <div class="nutrition-card">
-    <span class="label">Fiber</span>
+    <span class="label">{{ 'NUTRITION_GRID.FIBER' | translate }}</span>
     <div class="value-container">
       <tm-ng-odometer 
         [number]="fiber" 

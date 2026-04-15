@@ -1,0 +1,60 @@
+{
+  "MENU": {
+    "HOME": "Accueil",
+    "ADD_FOOD": "Ajouter un aliment",
+    "ADD_MEAL": "Ajouter un repas"
+  },
+  "HOME_PAGE": {
+    "FILTERS_TITLE": "Filtres",
+    "CALORIES": "Calories",
+    "MIN": "Min",
+    "MAX": "Max",
+    "SEARCH_PLACEHOLDER": "Rechercher des repas...",
+    "SORT_BY": "Trier par",
+    "NO_RESULTS": "Aucun repas trouvé correspondant à vos filtres."
+  },
+  "ADD_MEAL_PAGE": {
+    "MEAL_DETAILS": "Détails du repas",
+    "MEAL_NAME": "Nom du repas",
+    "SELECT_FOODS": "Sélectionner des aliments",
+    "SEARCH_FOODS": "Rechercher un aliment...",
+    "NO_FOODS_SELECTED": "Aucun aliment sélectionné pour le moment.",
+    "NUTRITION_PREVIEW": "Aperçu du repas",
+    "ADD_MEAL_PAGE": "Ajouter un repas"
+  },
+  "ADD_FOOD_PAGE": {
+    "FOOD_DETAILS": "Détails de l'aliment",
+    "FOOD_NAME": "Nom de l'aliment",
+    "BRAND": "Marque (Optionnel)",
+    "NUTRITIONAL_INFO": "Informations nutritionnelles",
+    "PROTEIN": "Protéines",
+    "CARBOHYDRATE": "Glucides",
+    "FAT": "Lipides",
+    "FIBER": "Fibres",
+    "UNITS": "Unités",
+    "UNIT_NAME": "Nom de l'unité",
+    "WEIGHT": "Poids",
+    "NO_UNITS": "Ajoutez une unité pour avoir plus d'options lors de la création de repas !",
+    "ADD_UNIT": "Ajouter une unité",
+    "SUBMIT": "Ajouter l'aliment"
+  },
+  "MEAL_PANEL": {
+    "INGREDIENTS": "Ingrédients",
+    "NO_MEAL_SELECTED": "Aucun repas sélectionné."
+  },
+  "NUTRITION_GRID": {
+    "CALORIES": "Calories",
+    "PROTEIN": "Protéine",
+    "CARBOHYDRATE": "Glucides",
+    "FAT": "Lipides",
+    "FIBER": "Fibre"
+  },
+  "SORT_VALUES": {
+    "NAME": "Nom",
+    "CALORIES": "Calories",
+    "PROTEIN": "Protéine",
+    "CARBOHYDRATE": "Glucides",
+    "FAT": "Lipides",
+    "FIBER": "Fibre"
+  }
+}

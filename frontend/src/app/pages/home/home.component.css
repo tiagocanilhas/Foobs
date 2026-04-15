@@ -5,9 +5,10 @@
     gap: 10px;
 }
 
-.page-layout {
+.container {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     gap: 20px;
     width: 100%;
 }
@@ -17,9 +18,7 @@
     flex-direction: column;
     width: 200px;
     padding: 15px;
-
     border-radius: 8px;
-
     background-color: #d7e4de;
     border: 1px solid black;
 }
@@ -27,7 +26,6 @@
 mat-form-field {
     padding-right: 5px;
 }
-
 
 .calories-inputs {
     display: flex;
@@ -38,7 +36,7 @@ mat-form-field {
     width: 95%;
 }
 
-.container {
+.content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

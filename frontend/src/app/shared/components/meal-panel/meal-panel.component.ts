@@ -1,17 +1,22 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { ClosablePanelComponent } from "@components/closable-panel/closable-panel.component";
+import { NutritionGridComponent } from '@components/nutrition-grid/nutrition-grid.component';
 
 import { Meal } from '@models/meal';
-
-import { NutritionGridComponent } from '@components/nutrition-grid/nutrition-grid.component';
 
 
 @Component({
   selector: 'app-meal-panel',
   imports: [
+    // Components
     ClosablePanelComponent,
-    NutritionGridComponent
+    NutritionGridComponent,
+
+    // Translate
+    TranslateModule
   ],
   templateUrl: './meal-panel.component.html',
   styleUrl: './meal-panel.component.css'

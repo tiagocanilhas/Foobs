@@ -1,0 +1,60 @@
+{
+  "MENU": {
+    "HOME": "Inicio",
+    "ADD_FOOD": "Añadir alimento",
+    "ADD_MEAL": "Añadir comida"
+  },
+  "HOME_PAGE": {
+    "FILTERS_TITLE": "Filtros",
+    "CALORIES": "Calorías",
+    "MIN": "Mín",
+    "MAX": "Máx",
+    "SEARCH_PLACEHOLDER": "Buscar comidas...",
+    "SORT_BY": "Ordenar por",
+    "NO_RESULTS": "No se encontraron comidas que coincidan con los filtros."
+  },
+  "ADD_MEAL_PAGE": {
+    "MEAL_DETAILS": "Detalles de la comida",
+    "MEAL_NAME": "Nombre de la comida",
+    "SELECT_FOODS": "Seleccionar alimentos",
+    "SEARCH_FOODS": "Buscar alimento...",
+    "NO_FOODS_SELECTED": "Aún no se han seleccionado alimentos.",
+    "NUTRITION_PREVIEW": "Vista previa de la comida",
+    "ADD_MEAL_PAGE": "Agregar comida"
+  },
+  "ADD_FOOD_PAGE": {
+    "FOOD_DETAILS": "Detalles del alimento",
+    "FOOD_NAME": "Nombre del alimento",
+    "BRAND": "Marca (Opcional)",
+    "NUTRITIONAL_INFO": "Información nutricional",
+    "PROTEIN": "Proteína",
+    "CARBOHYDRATE": "Carbohidratos",
+    "FAT": "Grasa",
+    "FIBER": "Fibra",
+    "UNITS": "Unidades",
+    "UNIT_NAME": "Nombre de la unidad",
+    "WEIGHT": "Peso",
+    "NO_UNITS": "¡Añade una unidad para tener más opciones al crear comidas!",
+    "ADD_UNIT": "Añadir unidad",
+    "SUBMIT": "Añadir alimento"
+  },
+  "MEAL_PANEL": {
+    "INGREDIENTS": "Ingredientes",
+    "NO_MEAL_SELECTED": "No se seleccionó ninguna comida."
+  },
+  "NUTRITION_GRID": {
+    "CALORIES": "calorías",
+    "PROTEIN": "Proteína",
+    "CARBOHYDRATE": "Carbohidrato",
+    "FAT": "Grasa",
+    "FIBER": "Fibra"
+  },
+  "SORT_VALUES": {
+    "NAME": "Nombre",
+    "CALORIES": "calorías",
+    "PROTEIN": "Proteína",
+    "CARBOHYDRATE": "Carbohidrato",
+    "FAT": "Grasa",
+    "FIBER": "Fibra"
+  }
+}

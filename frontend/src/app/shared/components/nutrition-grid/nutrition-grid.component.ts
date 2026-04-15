@@ -1,12 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { TmNgOdometerModule } from 'tm-ng-odometer';
 
 @Component({
   selector: 'app-nutrition-grid',
   imports: [
-    TmNgOdometerModule
+    // Number formatting with odometer
+    TmNgOdometerModule,
+
+    // Translate
+    TranslateModule
   ],
   templateUrl: './nutrition-grid.component.html',
   styleUrls: ['./nutrition-grid.component.css']

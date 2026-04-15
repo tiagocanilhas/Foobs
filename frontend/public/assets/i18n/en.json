@@ -1,0 +1,59 @@
+{
+  "HOME_PAGE": {
+    "FILTERS_TITLE": "Filters",
+    "CALORIES": "Calories",
+    "MIN": "Min",
+    "MAX": "Max",
+    "SEARCH_PLACEHOLDER": "Search for meals...",
+    "SORT_BY": "Sort by",
+    "NO_RESULTS": "No meals found matching your filters."
+  },
+  "ADD_MEAL_PAGE": {
+    "MEAL_DETAILS": "Meal Details",
+    "MEAL_NAME": "Meal Name",
+    "SELECT_FOODS": "Select Foods",
+    "SEARCH_FOODS": "Search Food...",
+    "NO_FOODS_SELECTED": "No foods selected yet.",
+    "NUTRITION_PREVIEW": "Meal Preview"
+  },
+  "ADD_FOOD_PAGE": {
+    "FOOD_DETAILS": "Food Details",
+    "FOOD_NAME": "Food Name",
+    "BRAND": "Brand name (Optional)",
+    "NUTRITIONAL_INFO": "Nutritional Information",
+    "PROTEIN": "Protein",
+    "CARBOHYDRATE": "Carbohydrate",
+    "FAT": "Fat",
+    "FIBER": "Fiber",
+    "UNITS": "Units",
+    "UNIT_NAME": "Unit Name",
+    "WEIGHT": "Weight",
+    "NO_UNITS": "Add a unit to have more options when adding meals!",
+    "ADD_UNIT": "Add Unit",
+    "SUBMIT": "Add Food"
+  },
+  "MENU": {
+    "HOME": "Home",
+    "ADD_FOOD": "Add a food",
+    "ADD_MEAL": "Add a meal"
+  },
+  "MEAL_PANEL": {
+    "INGREDIENTS": "Ingredients",
+    "NO_MEAL_SELECTED": "No meal selected."
+  },
+  "NUTRITION_GRID": {
+    "CALORIES": "Calories",
+    "PROTEIN": "Protein",
+    "CARBOHYDRATE": "Carbohydrate",
+    "FAT": "Food",
+    "FIBER": "Fiber"
+  },
+  "SORT_VALUES": {
+    "NAME": "Name",
+    "CALORIES": "Calories",
+    "PROTEIN": "Protein",
+    "CARBOHYDRATE": "Carbohydrate",
+    "FAT": "Fat",
+    "FIBER": "Fiber"
+  }
+}

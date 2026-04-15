@@ -1,55 +1,55 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <div class="food-details">
-        <h3>Food Details</h3>
+        <h3>{{ 'ADD_FOOD_PAGE.FOOD_DETAILS' | translate }}</h3>
 
         <mat-form-field>
-            <mat-label>Food Name</mat-label>
+            <mat-label>{{ 'ADD_FOOD_PAGE.FOOD_NAME' | translate }}</mat-label>
             <input matInput formControlName="name" type="text">
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Brand Name (Optional)</mat-label>
+            <mat-label>{{ 'ADD_FOOD_PAGE.BRAND' | translate }}</mat-label>
             <input matInput formControlName="brand" type="text">
         </mat-form-field>
     </div>
     
     <div class="nutritional-info">
-        <h3>Nutritional Information</h3>
+        <h3>{{ 'ADD_FOOD_PAGE.NUTRITIONAL_INFO' | translate }}</h3>
 
         <mat-form-field>
-            <mat-label>Proteins (g)</mat-label>
+            <mat-label>{{ 'ADD_FOOD_PAGE.PROTEIN' | translate }} (g)</mat-label>
             <input matInput formControlName="protein" type="number" min="0">
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Carbohydrates (g)</mat-label>
+            <mat-label>{{ 'ADD_FOOD_PAGE.CARBOHYDRATE' | translate }} (g)</mat-label>
             <input matInput formControlName="carbohydrate" type="number"min="0">
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Fats (g)</mat-label>
+            <mat-label>{{ 'ADD_FOOD_PAGE.FAT' | translate }} (g)</mat-label>
             <input matInput formControlName="fat" type="number"min="0">
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Fibers (g)</mat-label>
+            <mat-label>{{ 'ADD_FOOD_PAGE.FIBER' | translate }} (g)</mat-label>
             <input matInput formControlName="fiber" type="number"min="0">
         </mat-form-field>
     </div>
 
     <div class="units">
-     <h3>Units (Optional)</h3>
+     <h3>{{ 'ADD_FOOD_PAGE.UNITS' | translate }}</h3>
         <div formArrayName="units" >
             @for (unit of units.controls; track unit) {
                 <div [formGroupName]="$index" class="unit">
                     <mat-form-field>
-                        <mat-label>Unit Name</mat-label>
+                        <mat-label>{{ 'ADD_FOOD_PAGE.UNIT_NAME' | translate }}</mat-label>
                         <input matInput formControlName="name" type="text">
                     </mat-form-field>
 
                     <mat-form-field>
-                        <mat-label>Weight (g)</mat-label>
+                        <mat-label>{{ 'ADD_FOOD_PAGE.WEIGHT' | translate }} (g)</mat-label>
                         <input matInput formControlName="weight" type="number">
                     </mat-form-field>
 
@@ -58,11 +58,15 @@
                     </button>
                 </div>
             } @empty {
-                <p>Add a unit to have more options when adding meals!</p>
+                <p>{{ 'ADD_FOOD_PAGE.NO_UNITS' | translate }}</p>
             }
         </div>
 
-        <button mat-raised-button type="button" (click)="addUnit()">Add Unit</button>    
+        <button mat-raised-button type="button" (click)="addUnit()">
+            {{ 'ADD_FOOD_PAGE.ADD_UNIT' | translate }}
+        </button>
     </div>
-    <button mat-raised-button type="submit" [disabled]="form.invalid">Add Food</button>
+    <button mat-raised-button type="submit" [disabled]="form.invalid">
+        {{ 'ADD_FOOD_PAGE.SUBMIT' | translate }}
+    </button>
 </form>

@@ -1,0 +1,60 @@
+{
+  "MENU": {
+    "HOME": "Startseite",
+    "ADD_FOOD": "Lebensmittel hinzufügen",
+    "ADD_MEAL": "Mahlzeit hinzufügen"
+  },
+  "HOME_PAGE": {
+    "FILTERS_TITLE": "Filter",
+    "CALORIES": "Kalorien",
+    "MIN": "Min",
+    "MAX": "Max",
+    "SEARCH_PLACEHOLDER": "Mahlzeiten suchen...",
+    "SORT_BY": "Sortieren nach",
+    "NO_RESULTS": "Keine Mahlzeiten gefunden, die Ihren Filtern entsprechen."
+  },
+  "ADD_MEAL_PAGE": {
+    "MEAL_DETAILS": "Mahlzeitendetails",
+    "MEAL_NAME": "Name der Mahlzeit",
+    "SELECT_FOODS": "Lebensmittel auswählen",
+    "SEARCH_FOODS": "Lebensmittel suchen...",
+    "NO_FOODS_SELECTED": "Noch keine Lebensmittel ausgewählt.",
+    "NUTRITION_PREVIEW": "Mahlzeitenvorschau",
+    "ADD_MEAL_PAGE": "Mahlzeit hinzufügen"
+  },
+  "ADD_FOOD_PAGE": {
+    "FOOD_DETAILS": "Lebensmitteldetails",
+    "FOOD_NAME": "Lebensmittelname",
+    "BRAND": "Marke (Optional)",
+    "NUTRITIONAL_INFO": "Nährwertinformationen",
+    "PROTEIN": "Eiweiß",
+    "CARBOHYDRATE": "Kohlenhydrate",
+    "FAT": "Fett",
+    "FIBER": "Ballaststoffe",
+    "UNITS": "Einheiten",
+    "UNIT_NAME": "Einheitenname",
+    "WEIGHT": "Gewicht",
+    "NO_UNITS": "Füge eine Einheit hinzu, um mehr Optionen beim Erstellen von Mahlzeiten zu haben!",
+    "ADD_UNIT": "Einheit hinzufügen",
+    "SUBMIT": "Lebensmittel hinzufügen"
+  },
+  "MEAL_PANEL": {
+    "INGREDIENTS": "Zutaten",
+    "NO_MEAL_SELECTED": "Keine Mahlzeit ausgewählt."
+  },
+  "NUTRITION_GRID": {
+    "CALORIES": "Kalorien",
+    "PROTEIN": "Protein",
+    "CARBOHYDRATE": "Kohlenhydrat",
+    "FAT": "Fett",
+    "FIBER": "Faser"
+  },
+  "SORT_VALUES": {
+    "NAME": "Name",
+    "CALORIES": "Kalorien",
+    "PROTEIN": "Protein",
+    "CARBOHYDRATE": "Kohlenhydrat",
+    "FAT": "Fett",
+    "FIBER": "Faser"
+  }
+}

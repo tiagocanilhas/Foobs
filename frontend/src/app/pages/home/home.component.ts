@@ -10,6 +10,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { debounceTime, distinctUntilChanged, Observable, startWith, switchMap } from 'rxjs';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { MealPanelComponent } from '@components/meal-panel/meal-panel.component';
 import { MealCardComponent } from '@components/meal-card/meal-card.component';
 
@@ -39,6 +41,9 @@ import { SearchMealFilters, SortDirection, SortValue } from './home.forms';
 
     // Pipes
     AsyncPipe,
+
+    // Translate
+    TranslateModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -52,6 +57,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   sortOptions = Object.values(SortValue)
+    // .map(value => ({ value, label: `SORT_VALUES.${value}` }));
 
   filters = new FormGroup<SearchMealFilters>({
     name: new FormControl('', { nonNullable: true }),

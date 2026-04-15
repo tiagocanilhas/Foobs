@@ -6,7 +6,7 @@
       </header>
 
       <div class="meal-image-wrapper">
-        <img [src]="meal.url || './assets/no_image.png'" alt="{{ meal.name }}" class="meal-image" />
+        <img [src]="meal.url || './assets/images/no_image.png'" alt="{{ meal.name }}" class="meal-image" />
       </div>
 
       <app-nutrition-grid 
@@ -18,7 +18,7 @@
       </app-nutrition-grid>
 
       <section class="ingredients-section">
-        <h3>Ingredients</h3>
+        <h3>{{ 'MEAL_PANEL.INGREDIENTS' | translate }}</h3>
         <ul class="ingredients-list">
           @for (food of meal.foods; track food) {
             <li>
@@ -31,7 +31,7 @@
     </div>
   } @else {
     <div class="empty-state">
-      <p>No meal selected.</p>
+      <p>{{ 'MEAL_PANEL.NO_MEAL_SELECTED' | translate }}</p>
     </div>
   }
 </app-closable-panel>

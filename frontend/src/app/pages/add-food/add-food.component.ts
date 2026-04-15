@@ -1,22 +1,30 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 import { FoodService } from '@services/food.service';
+
 import { AddFoodForm, FoodUnitForm } from './add-food.forms';
 
 @Component({
   selector: 'app-add-food',
   imports: [
     ReactiveFormsModule,
+
+    // Material
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+
+    // Translate
+    TranslateModule
   ],
   templateUrl: './add-food.component.html',
   styleUrl: './add-food.component.css'
