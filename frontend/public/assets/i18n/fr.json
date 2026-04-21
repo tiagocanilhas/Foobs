@@ -5,10 +5,7 @@
     "ADD_MEAL": "Ajouter un repas"
   },
   "HOME_PAGE": {
-    "FILTERS_TITLE": "Filtres",
-    "CALORIES": "Calories",
-    "MIN": "Min",
-    "MAX": "Max",
+    "FILTERS_BUTTON": "Filters",
     "SEARCH_PLACEHOLDER": "Rechercher des repas...",
     "SORT_BY": "Trier par",
     "NO_RESULTS": "Aucun repas trouvé correspondant à vos filtres."
@@ -41,6 +38,12 @@
   "MEAL_PANEL": {
     "INGREDIENTS": "Ingrédients",
     "NO_MEAL_SELECTED": "Aucun repas sélectionné."
+  },
+  "FILTER_PANEL": {
+    "TITLE": "Filtres",
+    "CALORIES": "Calories",
+    "MIN": "Min",
+    "MAX": "Max"
   },
   "NUTRITION_GRID": {
     "CALORIES": "Calories",

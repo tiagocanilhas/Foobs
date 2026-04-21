@@ -5,13 +5,11 @@
     "ADD_MEAL": "Mahlzeit hinzufügen"
   },
   "HOME_PAGE": {
-    "FILTERS_TITLE": "Filter",
-    "CALORIES": "Kalorien",
-    "MIN": "Min",
-    "MAX": "Max",
     "SEARCH_PLACEHOLDER": "Mahlzeiten suchen...",
     "SORT_BY": "Sortieren nach",
-    "NO_RESULTS": "Keine Mahlzeiten gefunden, die Ihren Filtern entsprechen."
+    "NO_RESULTS": "Keine Mahlzeiten gefunden, die Ihren Filtern entsprechen.",
+    "FILTERS_BUTTON": "Filter",
+    "FILTERS": ""
   },
   "ADD_MEAL_PAGE": {
     "MEAL_DETAILS": "Mahlzeitendetails",
@@ -41,6 +39,12 @@
   "MEAL_PANEL": {
     "INGREDIENTS": "Zutaten",
     "NO_MEAL_SELECTED": "Keine Mahlzeit ausgewählt."
+  },
+  "FILTER_PANEL": {
+    "TITLE": "Filter",
+    "CALORIES": "Kalorien",
+    "MIN": "Min",
+    "MAX": "Max"
   },
   "NUTRITION_GRID": {
     "CALORIES": "Kalorien",

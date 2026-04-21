@@ -31,9 +31,6 @@ export class MealService {
     sortValue: string,
     sortDirection: string
   ): Observable<Meal[]> {
-
-    console.log({ name, minCalories, maxCalories, sortValue, sortDirection });
-
     const params = new HttpParams()
       .set('name', name)
       .set('minCalories', minCalories)

@@ -1,17 +1,15 @@
 {
   "MENU": {
+    "FILTERS_BUTTON": "Filtros",
     "HOME": "Inicio",
     "ADD_FOOD": "Añadir alimento",
     "ADD_MEAL": "Añadir comida"
   },
   "HOME_PAGE": {
-    "FILTERS_TITLE": "Filtros",
-    "CALORIES": "Calorías",
-    "MIN": "Mín",
-    "MAX": "Máx",
     "SEARCH_PLACEHOLDER": "Buscar comidas...",
     "SORT_BY": "Ordenar por",
-    "NO_RESULTS": "No se encontraron comidas que coincidan con los filtros."
+    "NO_RESULTS": "No se encontraron comidas que coincidan con los filtros.",
+    "FILTERS_BUTTON": "Filtros"
   },
   "ADD_MEAL_PAGE": {
     "MEAL_DETAILS": "Detalles de la comida",
@@ -41,6 +39,12 @@
   "MEAL_PANEL": {
     "INGREDIENTS": "Ingredientes",
     "NO_MEAL_SELECTED": "No se seleccionó ninguna comida."
+  },
+  "FILTER_PANEL": {
+    "TITLE": "Filtros",
+    "CALORIES": "Calorías",
+    "MIN": "Min",
+    "MAX": "Max"
   },
   "NUTRITION_GRID": {
     "CALORIES": "calorías",

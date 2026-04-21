@@ -1,0 +1,19 @@
+<div [formGroup]="filters" class="filter-panel">
+    <h2>{{ 'FILTER_PANEL.TITLE' | translate }}</h2>
+
+    <section>
+        <h3>{{ 'FILTER_PANEL.CALORIES' | translate }}</h3>
+        
+        <div class="calories-inputs">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'FILTER_PANEL.MIN' | translate }}</mat-label>
+                <input matInput type="number" formControlName="minCalories" step="10" min="1">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'FILTER_PANEL.MAX' | translate }}</mat-label>
+                <input matInput type="number" formControlName="maxCalories" step="10">
+            </mat-form-field>
+        </div>
+    </section>
+</div>

@@ -1,27 +1,18 @@
+@let isMobile = (layoutService.isHandset$ | async);
+
 <div class="container" [formGroup]="filters">
-    <aside class="filters">
-        <h2 class="filters-title">{{ 'HOME_PAGE.FILTERS_TITLE' | translate }}</h2>
-
-        <section class="filter-group">
-            <h3 class="group-title">{{ 'HOME_PAGE.CALORIES' | translate }}</h3>
-            
-            <div class="calories-inputs">
-                <mat-form-field appearance="outline" class="narrow-field">
-                    <mat-label>{{ 'HOME_PAGE.MIN' | translate }}</mat-label>
-                    <input matInput type="number" formControlName="minCalories" step="10" min="1">
-                </mat-form-field>
-
-                <mat-form-field appearance="outline" class="narrow-field">
-                    <mat-label>{{ 'HOME_PAGE.MAX' | translate }}</mat-label>
-                    <input matInput type="number" formControlName="maxCalories" step="10">
-                </mat-form-field>
-            </div>
-        </section>
-    </aside>
+    
+    @if (!(isMobile)) {
+        <div class="filter-panel">
+            <app-filter-panel
+                [filters]="filters"
+            />
+        </div>
+    }
 
     <main class="content">
-        <section class="search-section">
-            <mat-form-field>
+        <section class="search-section" [class.is-mobile]="isMobile">
+            <mat-form-field class="search-field">
                 <mat-label>{{ 'HOME_PAGE.SEARCH_PLACEHOLDER' | translate }}</mat-label>
                     <input matInput type="text" formControlName="name">
                 <mat-icon matSuffix>search</mat-icon>
@@ -39,26 +30,29 @@
                 </mat-select>
             </mat-form-field>
 
-            <button mat-icon-button type="button" (click)="toggleDirection()">
+            <button mat-icon-button type="button" (click)="toggleDirection()" class="custom-action-btn">
                 <mat-icon>
                     {{ filters.controls.sortDirection.value === 'ASC' ? 'arrow_upward' : 'arrow_downward' }}
                 </mat-icon>
             </button>
 
+            @if (isMobile) {
+                <button mat-icon-button type="button" (click)="openFilters()" class="custom-action-btn">
+                    {{ 'HOME_PAGE.FILTERS_BUTTON' | translate }} 
+                    <mat-icon>tune</mat-icon>
+                </button>
+            }
         </section>
 
-        <div class="meals">
+        <div class="meals" [class.is-mobile]="isMobile">
             @if (meals$ | async; as meals) {
                 @for (meal of meals; track meal.id) {
                     <app-meal-card 
                         [meal]="meal" 
-                        (selected)="mealSelected($event)" 
-                        class="meal-item"
+                        (selected)="mealSelected($event, isMobile)"
                     />
                 } @empty {
-                    <div class="no-results">
-                        <p>{{ 'HOME_PAGE.NO_RESULTS' | translate }}</p>
-                    </div>
+                    <p>{{ 'HOME_PAGE.NO_RESULTS' | translate }}</p>
                 }
             } @else {
                 @for (i of [].constructor(16); track $index) {
@@ -72,8 +66,15 @@
     </main>
 </div>
 
-<app-meal-panel 
-    [meal]="meal" 
-    (close)="closeMealPanel()" 
-/>
+@if (!(isMobile)) {
+    <app-closable-panel 
+        (close)="closeMealPanel()" 
+        [buttonDisabled]="!meal"
+        class="meal-panel"
+        >
+        <app-meal-panel 
+            [meal]="meal" 
+        />
+    </app-closable-panel>
+}
 

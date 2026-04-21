@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 270px;
 
     border: 1px solid black;
     border-radius: 8px;

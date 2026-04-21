@@ -1,37 +1,35 @@
-<app-closable-panel (close)="onClose()" [buttonDisabled]="closeButtonDisabled()">
-  @if (meal != null) {
-    <div class="meal-detail-container">
-      <header class="meal-header">
-        <h2 class="meal-title">{{ meal.name }}</h2>
-      </header>
+@if (meal != null) {
+  <div class="meal-detail-container">
+    <header class="meal-header">
+      <h2 class="meal-title">{{ meal.name }}</h2>
+    </header>
 
-      <div class="meal-image-wrapper">
-        <img [src]="meal.url || './assets/images/no_image.png'" alt="{{ meal.name }}" class="meal-image" />
-      </div>
-
-      <app-nutrition-grid 
-        [calories]="meal.calories"
-        [protein]="meal.protein"
-        [fat]="meal.fat"
-        [carbohydrate]="meal.carbohydrate"
-        [fiber]="meal.fiber">
-      </app-nutrition-grid>
-
-      <section class="ingredients-section">
-        <h3>{{ 'MEAL_PANEL.INGREDIENTS' | translate }}</h3>
-        <ul class="ingredients-list">
-          @for (food of meal.foods; track food) {
-            <li>
-              <span class="qty">{{ food.quantity }} {{ food.unitName }}</span>
-              <span class="food-name">{{ food.name }}</span>
-            </li>
-          }
-        </ul>
-      </section>
+    <div class="meal-image-wrapper">
+      <img [src]="meal.url || './assets/images/no_image.png'" alt="{{ meal.name }}" class="meal-image" />
     </div>
-  } @else {
-    <div class="empty-state">
-      <p>{{ 'MEAL_PANEL.NO_MEAL_SELECTED' | translate }}</p>
-    </div>
-  }
-</app-closable-panel>
+
+    <app-nutrition-grid 
+      [calories]="meal.calories"
+      [protein]="meal.protein"
+      [fat]="meal.fat"
+      [carbohydrate]="meal.carbohydrate"
+      [fiber]="meal.fiber">
+    </app-nutrition-grid>
+
+    <section class="ingredients-section">
+      <h3>{{ 'MEAL_PANEL.INGREDIENTS' | translate }}</h3>
+      <ul class="ingredients-list">
+        @for (food of meal.foods; track food) {
+          <li>
+            <span class="qty">{{ food.quantity }} {{ food.unitName }}</span>
+            <span class="food-name">{{ food.name }}</span>
+          </li>
+        }
+      </ul>
+    </section>
+  </div>
+} @else {
+  <div class="empty-state">
+    <p>{{ 'MEAL_PANEL.NO_MEAL_SELECTED' | translate }}</p>
+  </div>
+}

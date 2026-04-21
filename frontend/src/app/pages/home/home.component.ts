@@ -7,19 +7,24 @@ import { MatIcon } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 import { debounceTime, distinctUntilChanged, Observable, startWith, switchMap } from 'rxjs';
 
 import { TranslateModule } from '@ngx-translate/core';
 
+import { LayoutService } from '@services/layout.service';
+
 import { MealPanelComponent } from '@components/meal-panel/meal-panel.component';
 import { MealCardComponent } from '@components/meal-card/meal-card.component';
+import { FilterPanelComponent } from '@components/filter-panel/filter-panel.component';
 
 import { MealService } from '@services/meal.service';
 
 import { Meal } from '@models/meal';
 
 import { SearchMealFilters, SortDirection, SortValue } from './home.forms';
+import { ClosablePanelComponent } from "@components/closable-panel/closable-panel.component";
 
 
 @Component({
@@ -28,23 +33,22 @@ import { SearchMealFilters, SortDirection, SortValue } from './home.forms';
     // Components
     MealPanelComponent,
     MealCardComponent,
-
+    FilterPanelComponent,
     // Material
     MatInputModule,
     MatIcon,
     MatSliderModule,
     MatSelectModule,
     MatTooltipModule,
-
+    MatBottomSheetModule,
     // Forms
     ReactiveFormsModule,
-
     // Pipes
     AsyncPipe,
-
     // Translate
-    TranslateModule
-  ],
+    TranslateModule,
+    ClosablePanelComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -54,10 +58,29 @@ export class HomeComponent implements OnInit {
 
   mealService: MealService = inject(MealService);
 
+  layoutService = inject(LayoutService);
+
+  private _bottomSheet = inject(MatBottomSheet);
+
+  openFilters() {
+    this._bottomSheet.open(FilterPanelComponent, {
+      data: {
+        filters: this.filters,
+      }
+    });
+  }
+
+  openMealPanel(meal: Meal) {
+    this._bottomSheet.open(MealPanelComponent, {
+      data: {
+        meal: meal,
+      }
+    });
+  }
+
   constructor() { }
 
   sortOptions = Object.values(SortValue)
-    // .map(value => ({ value, label: `SORT_VALUES.${value}` }));
 
   filters = new FormGroup<SearchMealFilters>({
     name: new FormControl('', { nonNullable: true }),
@@ -93,8 +116,10 @@ export class HomeComponent implements OnInit {
     dir.setValue(dir.value === SortDirection.ASC ? SortDirection.DESC : SortDirection.ASC);
   }
 
-  mealSelected(meal: Meal) {
+  mealSelected(meal: Meal, isMobile: boolean | null) {
     this.meal = meal;
+
+    if (isMobile) this.openMealPanel(meal);
   }
 
   closeMealPanel() {

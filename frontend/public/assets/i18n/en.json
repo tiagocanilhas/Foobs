@@ -1,9 +1,6 @@
 {
   "HOME_PAGE": {
-    "FILTERS_TITLE": "Filters",
-    "CALORIES": "Calories",
-    "MIN": "Min",
-    "MAX": "Max",
+    "FILTERS_BUTTON": "Filters",
     "SEARCH_PLACEHOLDER": "Search for meals...",
     "SORT_BY": "Sort by",
     "NO_RESULTS": "No meals found matching your filters."
@@ -14,7 +11,8 @@
     "SELECT_FOODS": "Select Foods",
     "SEARCH_FOODS": "Search Food...",
     "NO_FOODS_SELECTED": "No foods selected yet.",
-    "NUTRITION_PREVIEW": "Meal Preview"
+    "NUTRITION_PREVIEW": "Meal Preview",
+    "ADD_MEAL_PAGE": "Add Meal"
   },
   "ADD_FOOD_PAGE": {
     "FOOD_DETAILS": "Food Details",
@@ -40,6 +38,12 @@
   "MEAL_PANEL": {
     "INGREDIENTS": "Ingredients",
     "NO_MEAL_SELECTED": "No meal selected."
+  },
+  "FILTER_PANEL": {
+    "TITLE": "Filters",
+    "CALORIES": "Calories",
+    "MIN": "Min",
+    "MAX": "Max"
   },
   "NUTRITION_GRID": {
     "CALORIES": "Calories",

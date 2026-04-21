@@ -5,13 +5,10 @@
     "ADD_MEAL": "Adicionar Refeição"
   },
   "HOME_PAGE": {
-    "FILTERS_TITLE": "Filtros",
-    "CALORIES": "Calorias",
-    "MIN": "Mín",
-    "MAX": "Máx",
     "SEARCH_PLACEHOLDER": "Procurar refeições...",
     "SORT_BY": "Ordenar por",
-    "NO_RESULTS": "Nenhuma refeição encontrada com estes filtros."
+    "NO_RESULTS": "Nenhuma refeição encontrada com estes filtros.",
+    "FILTERS_BUTTON": "Filtros"
   },
   "ADD_MEAL_PAGE": {
     "MEAL_DETAILS": "Detalhes da Refeição",
@@ -41,6 +38,12 @@
   "MEAL_PANEL": {
     "INGREDIENTS": "Ingredientes",
     "NO_MEAL_SELECTED": "Nenhuma refeição selecionada."
+  },
+  "FILTER_PANEL": {
+    "TITLE": "Filtros",
+    "CALORIES": "Calorias",
+    "MIN": "Min",
+    "MAX": "Max"
   },
   "NUTRITION_GRID": {
     "CALORIES": "Calorias",

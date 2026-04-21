@@ -1,0 +1,17 @@
+.filter-panel {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    padding: 16px;
+}
+
+mat-form-field {
+    padding-right: 5px;
+}
+
+.calories-inputs {
+    display: flex;
+    gap: 6px;
+}
+
