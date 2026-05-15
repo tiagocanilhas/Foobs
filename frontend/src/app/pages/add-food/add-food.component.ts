@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FoodService } from '@services/food.service';
 
 import { AddFoodForm, FoodUnitForm } from './add-food.forms';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-add-food',
@@ -33,7 +34,8 @@ export class AddFoodComponent {
 
   foodService: FoodService = inject(FoodService);
 
-  form = new FormGroup<AddFoodForm>({name: new FormControl('', { 
+  form = new FormGroup<AddFoodForm>({
+    name: new FormControl('', { 
       nonNullable: true, 
       validators: [Validators.required, Validators.minLength(3)] 
     }),
@@ -83,6 +85,8 @@ export class AddFoodComponent {
   onSubmit() {
     const formValues = this.form.getRawValue()
 
+    this.form.disable();
+
     this.foodService.createFood(
       formValues.name,
       formValues.brand!,
@@ -91,9 +95,15 @@ export class AddFoodComponent {
       formValues.fat,
       formValues.fiber,
       formValues.units!
-    ).subscribe({
-      next: (res) => console.log(res),
-      error: (err) => console.error(err)
-    });
+    )
+      .pipe(finalize(() => this.form.enable()))
+      .subscribe({
+        next: (res) => console.log(res),
+        error: (err) => console.error(err),
+        complete: () => {
+          this.form.reset();
+          this.form.enable();
+        }
+      });
   }
 }

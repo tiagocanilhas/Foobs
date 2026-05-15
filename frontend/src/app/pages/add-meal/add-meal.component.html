@@ -55,7 +55,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <button mat-icon-button type="button" (click)="removeFood($index)">
+                <button mat-icon-button type="button" (click)="removeFood($index)" [disabled]="form.disabled">
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>
@@ -65,7 +65,7 @@
         </div>
     </div>
 
-    <button mat-raised-button type="submit" [disabled]="form.invalid">
+    <button mat-raised-button type="submit" [disabled]="form.invalid || form.disabled">
         {{ 'ADD_MEAL_PAGE.ADD_MEAL_PAGE' | translate }}
     </button>
 </form>

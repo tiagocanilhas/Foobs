@@ -62,11 +62,11 @@
             }
         </div>
 
-        <button mat-raised-button type="button" (click)="addUnit()">
+        <button mat-raised-button type="button" (click)="addUnit()" [disabled]="form.disabled">
             {{ 'ADD_FOOD_PAGE.ADD_UNIT' | translate }}
         </button>
     </div>
-    <button mat-raised-button type="submit" [disabled]="form.invalid">
+    <button mat-raised-button type="submit" [disabled]="form.invalid || form.disabled">
         {{ 'ADD_FOOD_PAGE.SUBMIT' | translate }}
     </button>
 </form>

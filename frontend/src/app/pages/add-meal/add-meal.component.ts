@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
 
-import { debounceTime, distinctUntilChanged, Observable, of, switchMap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, finalize, Observable, of, switchMap } from 'rxjs';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -76,7 +76,7 @@ export class AddMealComponent implements OnInit {
 
 
   form = new FormGroup<AddMealForm>({
-    name: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
+    name: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(3)] }),
     search: new FormControl(''),
     foods: new FormArray<FormGroup<MealFoodForm>>([]),
   });
@@ -153,11 +153,11 @@ export class AddMealComponent implements OnInit {
     this.foods.removeAt(index);
   }
 
-
-
   onSubmit() {
     const formValues = this.form.getRawValue()
 
+    this.form.disable();
+    
     this.mealService.createMeal(
       formValues.name,
       formValues.foods.map(f => ({
@@ -165,10 +165,16 @@ export class AddMealComponent implements OnInit {
         quantity: f.quantity,
         unitId: f.selectedUnit,
       }))
-    ).subscribe({
-      next: res => console.log(res),
-      error: err => console.error(err)
-    });
+    )
+      .pipe(finalize(() => this.form.enable()))
+      .subscribe({
+          next: res => console.log(res),
+          error: err => console.error(err),
+          complete: () => {
+            this.form.reset();
+            this.foods.clear();
+          }
+        });
   }
 
 }
